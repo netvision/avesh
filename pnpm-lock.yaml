@@ -17,6 +17,9 @@ importers:
       vue-router:
         specifier: ^4.3.2
         version: 4.3.2(vue@3.4.23(typescript@5.4.5))
+      vue3-carousel:
+        specifier: ^0.3.3
+        version: 0.3.3(vue@3.4.23(typescript@5.4.5))
     devDependencies:
       '@antfu/eslint-config':
         specifier: ^2.15.0
@@ -2941,6 +2944,11 @@ packages:
     hasBin: true
     peerDependencies:
       typescript: '*'
+
+  vue3-carousel@0.3.3:
+    resolution: {integrity: sha512-VsuOBE4LG9lxAiYGR9U7ps4RyJ4oFQGzk79/49ybvoxzNpahPAVWIDHKK3a1lOv0CSplFq6u4FvaFLZ8x3FgWg==}
+    peerDependencies:
+      vue: ^3.2.0
 
   vue@3.4.23:
     resolution: {integrity: sha512-X1y6yyGJ28LMUBJ0k/qIeKHstGd+BlWQEOT40x3auJFTmpIhpbKLgN7EFsqalnJXq1Km5ybDEsp6BhuWKciUDg==}
@@ -6284,6 +6292,10 @@ snapshots:
       '@vue/language-core': 2.0.13(typescript@5.4.5)
       semver: 7.6.0
       typescript: 5.4.5
+
+  vue3-carousel@0.3.3(vue@3.4.23(typescript@5.4.5)):
+    dependencies:
+      vue: 3.4.23(typescript@5.4.5)
 
   vue@3.4.23(typescript@5.4.5):
     dependencies:

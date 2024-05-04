@@ -1,7 +1,7 @@
 {
   "type": "module",
   "private": true,
-  "packageManager": "pnpm@9.0.4",
+  "packageManager": "pnpm@9.0.6",
   "package-manager-strict": false,
   "scripts": {
     "build": "vite build",
@@ -16,7 +16,8 @@
   "dependencies": {
     "@vueuse/core": "^10.9.0",
     "vue": "^3.4.23",
-    "vue-router": "^4.3.2"
+    "vue-router": "^4.3.2",
+    "vue3-carousel": "^0.3.3"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^2.15.0",

@@ -1,10 +1,39 @@
 <script setup>
+import 'vue3-carousel/dist/carousel.css'
+import { Carousel, Navigation, Pagination, Slide } from 'vue3-carousel'
+
 defineOptions({
   name: 'IndexPage',
 })
+const slides = [
+  {
+    id: 1,
+    src: '/01.jpg',
+  },
+  {
+    id: 2,
+    src: '/02.jpg',
+  },
+  {
+    id: 3,
+    src: '/03.jpg',
+  },
+]
 </script>
 
 <template>
+  <Carousel :items-to-show="1" :autoplay="2000">
+    <Slide v-for="slide in slides" :key="slide.id">
+      <div class="carousel__item">
+        <img :src="slide.src">
+      </div>
+    </Slide>
+
+    <template #addons>
+      <Navigation />
+      <Pagination />
+    </template>
+  </Carousel>
   <section class="py24">
     <div class="mx-auto max-w-7xl flex flex-col gap16 px-5 md-flex-row lg-px-5 md-px-12 sm-px-10">
       <div class="flex md-flex-1">
@@ -65,3 +94,27 @@ defineOptions({
     </div>
   </section>
 </template>
+
+<style>
+.carousel__item {
+  min-height: 200px;
+  width: 100%;
+  background-color: var(--vc-clr-primary);
+  color: var(--vc-clr-white);
+  font-size: 20px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel__slide {
+  padding: 10px;
+}
+
+.carousel__prev,
+.carousel__next {
+  box-sizing: content-box;
+  border: 5px solid white;
+}
+</style>
