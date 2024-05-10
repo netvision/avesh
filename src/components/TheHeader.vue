@@ -8,23 +8,18 @@ const navItems = [
   },
   {
     id: 2,
-    text: 'Services',
-    href: '/',
+    text: 'About Us',
+    href: '/about',
   },
   {
     id: 3,
-    text: 'About',
-    href: '/',
+    text: 'Product Range',
+    href: '/catagories/1',
   },
   {
     id: 4,
-    text: 'Work',
-    href: '/',
-  },
-  {
-    id: 5,
-    text: 'Pricing',
-    href: '/',
+    text: 'Contact',
+    href: '/contact',
   },
 ]
 
