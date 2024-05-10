@@ -1,3 +1,4 @@
+<!-- eslint-disable no-console -->
 <script setup>
 import axios from 'axios'
 import 'vue3-carousel/dist/carousel.css'
@@ -6,6 +7,9 @@ import { Carousel, Navigation, Pagination, Slide } from 'vue3-carousel'
 defineOptions({
   name: 'IndexPage',
 })
+
+const myCarousel = ref(null)
+
 const slides = [
   {
     id: 1,
@@ -29,7 +33,7 @@ onMounted(async () => {
 </script>
 
 <template>
-  <Carousel :items-to-show="1" :autoplay="2000">
+  <Carousel ref="myCarousel" :items-to-show="1" :autoplay="2000" :wrap-around="true">
     <Slide v-for="slide in slides" :key="slide.id">
       <div class="carousel__item">
         <img :src="slide.src">
