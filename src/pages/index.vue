@@ -52,15 +52,15 @@ onMounted(async () => {
         Our Products Range
       </h1>
     </div>
-    <div class="grid gap6 lg-grid-cols-3 sm-grid-cols-2 lg-gap10 md-gap8">
-      <div v-for="cat in cats" :key="cat.id" class="aspect-5/3.8 relative overflow-hidden rd-lg">
-        <img :src="`https://avesh.netserve.in/${cat.image_src}`" alt="project cover" width="1300" class="h-full w-full object-cover">
+    <div class="w-full">
+      <div v-for="cat in cats" :key="cat.id" class="aspect-5/3.8 relative my-5 overflow-hidden rd-lg">
+        <img :src="`https://avesh.netserve.in/${cat.image_src}`" alt="project cover" class="h-lg w-full object-cover">
         <div class="absolute inset-0 flex flex-col justify-end from-gray-800 bg-gradient-to-t p-5 text-gray3 space-y-5 dark:from-gray-900">
           <h1 class="text-2xl text-white font-semibold">
             {{ cat.name }}
           </h1>
           <div class="w-full">
-            <a :href="`catagories/${cat.id}`" class="group flex justify-end gap-x-3 border-b border-gray8 text-gray1 font-medium">
+            <a :href="`categories/cat-${cat.id}.pdf`" class="group flex justify-end gap-x-3 border-b border-gray8 text-gray1 font-medium">
               View details
               <span class="duration-300 ease-linear group-hover:pl-2">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-5 w-5">

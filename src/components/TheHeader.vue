@@ -14,7 +14,7 @@ const navItems = [
   {
     id: 3,
     text: 'Product Range',
-    href: '/catagories/1',
+    href: '/cats/1',
   },
   {
     id: 4,
@@ -59,6 +59,9 @@ function closeNavBar() {
             <router-link :to="navItem.href" class="after-ease-linean relative py2.5 duration-300 ease-linear after-absolute after-bottom-0 after-left-0 after-h-px after-w-full after-rd-md after-bg-indigo-6 hover-text-indigo-6 after-duration-300 after-content-empty" :class="navItem.isActive ? 'text-indigo-6 after-scale-x-100' : 'after-scale-x-0 hover-after-scale-x-100'">
               {{ navItem.text }}
             </router-link>
+          </li>
+          <li>
+            <a href="https://dashboard.avesh.in" target="_blank">Login</a>
           </li>
         </ul>
       </div>
