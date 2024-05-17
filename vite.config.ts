@@ -17,6 +17,7 @@ export default defineConfig({
     },
   },
   plugins: [
+    VueRouter(),
     VueMacros({
       defineOptions: false,
       defineModels: false,
@@ -29,9 +30,6 @@ export default defineConfig({
         }),
       },
     }),
-
-    // https://github.com/posva/unplugin-vue-router
-    VueRouter(),
 
     // https://github.com/antfu/unplugin-auto-import
     AutoImport({
