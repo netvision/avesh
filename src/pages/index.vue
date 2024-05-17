@@ -60,6 +60,14 @@ onMounted(async () => {
             {{ cat.name }}
           </h1>
           <div class="w-full">
+            <a :href="`./cats/${cat.id}`" class="group flex justify-start gap-x-3 border-b border-gray8 text-gray1 font-medium">
+              View Products
+              <span class="duration-300 ease-linear group-hover:pl-2">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-5 w-5">
+                  <path fill-rule="evenodd" d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z" clip-rule="evenodd" />
+                </svg>
+              </span>
+            </a>
             <a :href="`categories/cat-${cat.id}.pdf`" class="group flex justify-end gap-x-3 border-b border-gray8 text-gray1 font-medium">
               View details
               <span class="duration-300 ease-linear group-hover:pl-2">
