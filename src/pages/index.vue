@@ -52,14 +52,14 @@ onMounted(async () => {
         Our Products Range
       </h1>
     </div>
-    <div class="w-full">
-      <div v-for="cat in cats" :key="cat.id" class="aspect-5/3.8 relative my-5 overflow-hidden rd-lg">
-        <img :src="`https://avesh.netserve.in/${cat.image_src}`" alt="project cover" class="h-lg w-full object-cover">
+    <div class="grid grid-cols-12 gap-4">
+      <div v-for="cat in cats" :key="cat.id" class="aspect-5/3.8 relative col-span-12 my-5 w-full overflow-hidden rd-lg md:col-span-4">
+        <img :src="`https://avesh.netserve.in/${cat.image_src}`" alt="project cover" class="w-full object-cover">
         <div class="absolute inset-0 flex flex-col justify-end from-gray-800 bg-gradient-to-t p-5 text-gray3 space-y-5 dark:from-gray-900">
           <h1 class="text-2xl text-white font-semibold">
             {{ cat.name }}
           </h1>
-          <div class="w-full">
+          <div class="w-full flex justify-between">
             <a :href="`./cats/${cat.id}`" class="group flex justify-start gap-x-3 border-b border-gray8 text-gray1 font-medium">
               View Products
               <span class="duration-300 ease-linear group-hover:pl-2">
@@ -103,6 +103,6 @@ onMounted(async () => {
 .carousel__prev,
 .carousel__next {
   box-sizing: content-box;
-  border: 5px solid white;
+  border: 0;
 }
 </style>
