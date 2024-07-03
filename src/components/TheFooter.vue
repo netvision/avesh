@@ -62,6 +62,9 @@ onMounted(async () => {
           <p> &copy; 2024 Avesh. All right reserved </p>
         </div>
         <div class="w-full flex justify-center gap-3 sm-justify-end">
+          <a href="https://avesh.netserve.in/app-release.apk" target="_blank" aria-label="social link">
+            <span flex text-2xl>Android App</span>
+          </a>
           <a v-if="info.twitter" :href="info.twitter" aria-label="social link">
             <span i-carbon-logo-twitter flex text-2xl />
           </a>
