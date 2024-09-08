@@ -54,6 +54,7 @@ onMounted(async () => {
             </router-link>
           </li>
         </ul>
+        <p><a href="/complaint" class="mt-10 border border-red-5 rounded bg-red-2 p-1 font-bold">Raise a Complaint</a></p>
       </div>
     </div>
     <div px="5 sm:10 md:12 lg:5" class="mx-auto max-w-7xl">

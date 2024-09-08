@@ -13,15 +13,27 @@ const myCarousel = ref(null)
 const slides = [
   {
     id: 1,
-    src: '/01.jpg',
+    src: '/04.jpg',
   },
   {
     id: 2,
-    src: '/02.jpg',
+    src: '/05.jpg',
   },
   {
     id: 3,
-    src: '/03.jpg',
+    src: '/06.jpg',
+  },
+  {
+    id: 4,
+    src: '/07.jpg',
+  },
+  {
+    id: 5,
+    src: '/08.jpg',
+  },
+  {
+    id: 6,
+    src: '/09.jpg',
   },
 ]
 
