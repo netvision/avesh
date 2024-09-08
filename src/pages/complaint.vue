@@ -4,6 +4,7 @@ import axios from 'axios'
 import Datepicker from 'vue3-datepicker'
 
 const data = ref('')
+const cats = ref([])
 const feed = ref({})
 feed.value.date = ref(new Date())
 const submitted = ref(false)
@@ -40,6 +41,7 @@ async function saveFeed() {
 
 onMounted(async () => {
   data.value = await axios.get('https://avesh.netserve.in/website-infos/1').then(r => r.data)
+  cats.value = await axios.get('https://avesh.netserve.in/cats').then(r => r.data)
 })
 </script>
 
@@ -85,8 +87,12 @@ onMounted(async () => {
       </div>
 
       <div class="md:col-span-5">
-        <label for="pin">Product Name</label>
-        <input v-model="feed.product_name" type="text" name="product" class="mt-1 h-10 w-full border rounded bg-red-50 px-4" placeholder="Product">
+        <label for="pin">Product Category</label>
+        <select v-model="feed.product_name" placeholder="Select product category" class="block border border-gray-400 rounded-md bg-white p-2 text-gray-700 transition-colors duration-200 focus:border-blue-600 hover:border-gray-500 focus:ring-2 focus:ring-blue-600">
+          <option v-for="cat in cats" :key="cat.id" :value="cat.name">
+            {{ cat.name }}
+          </option>
+        </select>
       </div>
 
       <div class="md:col-span-5">
@@ -119,7 +125,7 @@ onMounted(async () => {
       </div>
     </div>
     <div v-else>
-      <p>Thank you {{ feed.full_name }} for the feedback. we will getback to you soon!</p>
+      <p>Thank you <span class="font-bold">{{ feed.name }}</span> for sharing your concern. We will getback to you soon and resolve your issue at the earliest!</p>
       <p>
         <router-link to="/">
           Click to get back to home Page
