@@ -7,6 +7,7 @@ const data = ref('')
 const cats = ref([])
 const feed = ref({})
 feed.value.date = ref(new Date())
+feed.value.cur_date = ref(new Date())
 const submitted = ref(false)
 
 const resetFeed = () => feed.value = {}
@@ -32,6 +33,7 @@ async function saveFeed() {
 
   else {
     feed.value.date_of_purchase = feed.value.date.toISOString().slice(0, 10)
+    feed.value.cur_date = feed.value.cur_date.toISOString().slice(0, 10)
     const res = await axios.post('https://avesh.netserve.in/complaints', feed.value)
     submitted.value = true
     if (res.status === 201)
@@ -51,6 +53,10 @@ onMounted(async () => {
       Raise a <span class="text-red-700 italic">Complaint</span>
     </h2>
     <div v-if="!submitted" class="grid grid-cols-1 m-6 gap-4 gap-y-2 text-left text-sm text-xl md:grid-cols-5">
+      <div class="md:col-span-5">
+        <label for="subject">Date</label>
+        <Datepicker v-model="feed.cur_date" class="mt-1 h-10 w-full border rounded bg-gray-50 px-4" />
+      </div>
       <div class="md:col-span-5">
         <label for="name">Customer / Dealer Name</label>
         <input v-model="feed.name" type="text" name="name" class="mt-1 h-10 w-full border rounded bg-gray-50 px-4" value="" placeholder="Name">
