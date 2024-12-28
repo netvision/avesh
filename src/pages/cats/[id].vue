@@ -70,7 +70,7 @@ onMounted(async () => {
                     <Navigation />
                   </template>
                 </Carousel>
-                <img v-else :src="prod.imgs[0].url" alt="project cover" width="1300" class="aspect-[4/3.3] w-full rounded object-cover">
+                <img v-else :src="prod.imgs[0]?.url" alt="project cover" width="1300" class="aspect-[4/3.3] w-full rounded object-cover">
                 <div class="space-y5 flex flex-col justify-end text-gray3">
                   <h1 class="text-lg text-gray9 font-semibold dark-text-white">
                     {{ prod.name }}
